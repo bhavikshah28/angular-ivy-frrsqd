@@ -32,10 +32,12 @@ export class EmployeeService {
   }
 
   getEmployeeList() {
+    alert("hi");
     this.http
-      .get("http://dummy.restapiexample.com/api/v1/employees")
+      .get("https://dummyapi.io/data/api/user?limit=10")
       .pipe(
         map(data => {
+          alert("hello");
           return data.json() as Employee[];
         })
       )
